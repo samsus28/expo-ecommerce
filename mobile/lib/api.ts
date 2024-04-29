@@ -2,11 +2,9 @@ import { useAuth } from "@clerk/clerk-expo";
 import axios from "axios";
 import { useEffect } from "react";
 
-// localhost will work in simulator
 const API_URL = "http://localhost:3000/api";
 
-// prod url will work in your physical device
-// const API_URL = "https://expo-ecommerce-th4ln.sevalla.app/api"
+
 
 const api = axios.create({
   baseURL: API_URL,
@@ -29,7 +27,6 @@ export const useApi = () => {
       return config;
     });
 
-    // cleanup: remove interceptor when component unmounts
 
     return () => {
       api.interceptors.request.eject(interceptor);
@@ -39,5 +36,4 @@ export const useApi = () => {
   return api;
 };
 
-// on every single req, we would like have an auth token so that our backend knows that we're authenticated
-// we're including the auth token under the auth headers
+

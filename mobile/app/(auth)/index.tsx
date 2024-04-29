@@ -6,7 +6,7 @@ const AuthScreen = () => {
 
   return (
     <View className="px-8 flex-1 justify-center items-center bg-white">
-      {/* DEMO IMAGE */}
+      {}
       <Image
         source={require("../../assets/images/auth-image.png")}
         className="size-96"
@@ -14,7 +14,7 @@ const AuthScreen = () => {
       />
 
       <View className="gap-2 mt-3">
-        {/* GOOGLE SIGN IN BTN */}
+        {}
         <TouchableOpacity
           className="flex-row items-center justify-center bg-white border border-gray-300 rounded-full px-6 py-2"
           onPress={() => handleSocialAuth("oauth_google")}
@@ -22,7 +22,7 @@ const AuthScreen = () => {
           style={{
             shadowOffset: { width: 0, height: 1 },
             shadowOpacity: 0.1,
-            elevation: 2, // this is for android
+            elevation: 2, 
           }}
         >
           {loadingStrategy === "oauth_google" ? (
@@ -39,7 +39,7 @@ const AuthScreen = () => {
           )}
         </TouchableOpacity>
 
-        {/* APPLE SIGN IN BTN */}
+        {}
         <TouchableOpacity
           className="flex-row items-center justify-center bg-white border border-gray-300 rounded-full px-6 py-3"
           onPress={() => handleSocialAuth("oauth_apple")}
@@ -47,7 +47,7 @@ const AuthScreen = () => {
           style={{
             shadowOffset: { width: 0, height: 1 },
             shadowOpacity: 0.1,
-            elevation: 2, // this is for android
+            elevation: 2, 
           }}
         >
           {loadingStrategy === "oauth_apple" ? (

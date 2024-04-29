@@ -22,7 +22,6 @@ function OrdersScreen() {
     setShowRatingModal(true);
     setSelectedOrder(order);
 
-    // init ratings for all product to 0 - resettin the state for each product
     const initialRatings: { [key: string]: number } = {};
     order.orderItems.forEach((item) => {
       const productId = item.product._id;
@@ -34,7 +33,6 @@ function OrdersScreen() {
   const handleSubmitRating = async () => {
     if (!selectedOrder) return;
 
-    // check if all products have been rated
     const allRated = Object.values(productRatings).every((rating) => rating > 0);
     if (!allRated) {
       Alert.alert("Error", "Please rate all products");
@@ -63,7 +61,7 @@ function OrdersScreen() {
 
   return (
     <SafeScreen>
-      {/* Header */}
+      {}
       <View className="px-6 pb-5 border-b border-surface flex-row items-center">
         <TouchableOpacity onPress={() => router.back()} className="mr-4">
           <Ionicons name="arrow-back" size={28} color="#FFFFFF" />
@@ -98,7 +96,7 @@ function OrdersScreen() {
                         contentFit="cover"
                       />
 
-                      {/* BADGE FOR MORE ITEMS */}
+                      {}
                       {order.orderItems.length > 1 && (
                         <View className="absolute -bottom-1 -right-1 bg-primary rounded-full size-7 items-center justify-center">
                           <Text className="text-background text-xs font-bold">
@@ -129,7 +127,7 @@ function OrdersScreen() {
                     </View>
                   </View>
 
-                  {/* ORDER ITEMS SUMMARY */}
+                  {}
                   {order.orderItems.map((item, index) => (
                     <Text
                       key={item._id}

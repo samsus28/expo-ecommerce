@@ -12,7 +12,6 @@ export async function createReview(req, res) {
 
     const user = req.user;
 
-    // verify order exists and is delivered
     const order = await Order.findById(orderId);
     if (!order) {
       return res.status(404).json({ error: "Order not found" });
@@ -26,7 +25,6 @@ export async function createReview(req, res) {
       return res.status(400).json({ error: "Can only review delivered orders" });
     }
 
-    // verify product is in the order
     const productInOrder = order.orderItems.find(
       (item) => item.product.toString() === productId.toString()
     );
@@ -34,14 +32,12 @@ export async function createReview(req, res) {
       return res.status(400).json({ error: "Product not found in this order" });
     }
 
-    // atomic update or create
     const review = await Review.findOneAndUpdate(
       { productId, userId: user._id },
       { rating, orderId, productId, userId: user._id },
       { new: true, upsert: true, runValidators: true }
     );
 
-    // update the product rating with atomic aggregation
     const reviews = await Review.find({ productId });
     const totalRating = reviews.reduce((sum, rev) => sum + rev.rating, 0);
     const updatedProduct = await Product.findByIdAndUpdate(

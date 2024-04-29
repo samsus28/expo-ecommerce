@@ -11,7 +11,6 @@ export async function addAddress(req, res) {
       return res.status(400).json({ error: "Missing required address fields" });
     }
 
-    // if this is set as default, unset all other defaults
     if (isDefault) {
       user.addresses.forEach((addr) => {
         addr.isDefault = false;
@@ -62,7 +61,6 @@ export async function updateAddress(req, res) {
       return res.status(404).json({ error: "Address not found" });
     }
 
-    // if this is set as default, unset all other defaults
     if (isDefault) {
       user.addresses.forEach((addr) => {
         addr.isDefault = false;
@@ -107,7 +105,6 @@ export async function addToWishlist(req, res) {
     const { productId } = req.body;
     const user = req.user;
 
-    // check if product is already in the wishlist
     if (user.wishlist.includes(productId)) {
       return res.status(400).json({ error: "Product already in wishlist" });
     }
@@ -127,7 +124,6 @@ export async function removeFromWishlist(req, res) {
     const { productId } = req.params;
     const user = req.user;
 
-    // check if product is already in the wishlist
     if (!user.wishlist.includes(productId)) {
       return res.status(400).json({ error: "Product not found in wishlist" });
     }
@@ -144,7 +140,7 @@ export async function removeFromWishlist(req, res) {
 
 export async function getWishlist(req, res) {
   try {
-    // we're using populate, bc wishlist is just an array of product ids
+
     const user = await User.findById(req.user._id).populate("wishlist");
 
     res.status(200).json({ wishlist: user.wishlist });

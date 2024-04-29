@@ -26,7 +26,6 @@ export async function addToCart(req, res) {
   try {
     const { productId, quantity = 1 } = req.body;
 
-    // validate product exists and has stock
     const product = await Product.findById(productId);
     if (!product) {
       return res.status(404).json({ error: "Product not found" });
@@ -48,17 +47,16 @@ export async function addToCart(req, res) {
       });
     }
 
-    // check if item already in the cart
     const existingItem = cart.items.find((item) => item.product.toString() === productId);
     if (existingItem) {
-      // increment quantity by 1
+
       const newQuantity = existingItem.quantity + 1;
       if (product.stock < newQuantity) {
         return res.status(400).json({ error: "Insufficient stock" });
       }
       existingItem.quantity = newQuantity;
     } else {
-      // add new item
+
       cart.items.push({ product: productId, quantity });
     }
 
@@ -90,7 +88,6 @@ export async function updateCartItem(req, res) {
       return res.status(404).json({ error: "Item not found in cart" });
     }
 
-    // check if product exists & validate stock
     const product = await Product.findById(productId);
     if (!product) {
       return res.status(404).json({ error: "Product not found" });

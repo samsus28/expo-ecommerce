@@ -11,7 +11,6 @@ export async function createOrder(req, res) {
       return res.status(400).json({ error: "No order items" });
     }
 
-    // validate products and stock
     for (const item of orderItems) {
       const product = await Product.findById(item.product._id);
       if (!product) {
@@ -31,7 +30,6 @@ export async function createOrder(req, res) {
       totalPrice,
     });
 
-    // update product stock
     for (const item of orderItems) {
       await Product.findByIdAndUpdate(item.product._id, {
         $inc: { stock: -item.quantity },
@@ -51,7 +49,6 @@ export async function getUserOrders(req, res) {
       .populate("orderItems.product")
       .sort({ createdAt: -1 });
 
-    // check if each order has been reviewed
 
     const orderIds = orders.map((order) => order._id);
     const reviews = await Review.find({ orderId: { $in: orderIds } });

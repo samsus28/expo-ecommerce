@@ -33,10 +33,10 @@ export default function OrderSummary({ subtotal, shipping, tax, total }: OrderSu
             <Text className="text-text-primary font-semibold text-base">${tax.toFixed(2)}</Text>
           </View>
 
-          {/* Divider */}
+          {}
           <View className="border-t border-background-lighter pt-3 mt-1" />
 
-          {/* Total */}
+          {}
           <View className="flex-row justify-between items-center">
             <Text className="text-text-primary font-bold text-lg">Total</Text>
             <Text className="text-primary font-bold text-2xl">${total.toFixed(2)}</Text>

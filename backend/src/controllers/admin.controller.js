@@ -47,7 +47,7 @@ export async function createProduct(req, res) {
 
 export async function getAllProducts(_, res) {
   try {
-    // -1 means in desc order: most recent products first
+
     const products = await Product.find().sort({ createdAt: -1 });
     res.status(200).json(products);
   } catch (error) {
@@ -72,7 +72,6 @@ export async function updateProduct(req, res) {
     if (stock !== undefined) product.stock = parseInt(stock);
     if (category) product.category = category;
 
-    // handle image updates if new images are uploaded
     if (req.files && req.files.length > 0) {
       if (req.files.length > 3) {
         return res.status(400).json({ message: "Maximum 3 images allowed" });
@@ -145,7 +144,7 @@ export async function updateOrderStatus(req, res) {
 
 export async function getAllCustomers(_, res) {
   try {
-    const customers = await User.find().sort({ createdAt: -1 }); // latest user first
+    const customers = await User.find().sort({ createdAt: -1 }); 
     res.status(200).json({ customers });
   } catch (error) {
     console.error("Error fetching customers:", error);
@@ -192,10 +191,9 @@ export const deleteProduct = async (req, res) => {
       return res.status(404).json({ message: "Product not found" });
     }
 
-    // Delete images from Cloudinary
     if (product.images && product.images.length > 0) {
       const deletePromises = product.images.map((imageUrl) => {
-        // Extract public_id from URL (assumes format: .../products/publicId.ext)
+
         const publicId = "products/" + imageUrl.split("/products/")[1]?.split(".")[0];
         if (publicId) return cloudinary.uploader.destroy(publicId);
       });

@@ -27,13 +27,13 @@ function OrdersPage() {
 
   return (
     <div className="space-y-6">
-      {/* HEADER */}
+      {}
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-bold">Orders</h1>
         <p className="text-base-content/70">Manage customer orders</p>
       </div>
 
-      {/* ORDERS TABLE */}
+      {}
       <div className="card bg-base-100 shadow-xl">
         <div className="card-body">
           {isLoading ? (

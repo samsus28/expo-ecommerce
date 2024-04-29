@@ -12,7 +12,7 @@ function CustomersPage() {
 
   return (
     <div className="spacey-6">
-      {/* HEADER */}
+      {}
       <div>
         <h1 className="text-2xl font-bold">Customers</h1>
         <p className="text-base-content/70 mt-1">
@@ -20,7 +20,7 @@ function CustomersPage() {
         </p>
       </div>
 
-      {/* CUSTOMERS TABLE */}
+      {}
       <div className="card bg-base-100 shadow-xl">
         <div className="card-body">
           {isLoading ? (

@@ -128,7 +128,7 @@ function PrivacyAndSecurityScreen() {
 
   return (
     <SafeScreen>
-      {/* HEADER */}
+      {}
       <View className="px-6 pb-5 border-b border-surface flex-row items-center">
         <TouchableOpacity onPress={() => router.back()} className="mr-4">
           <Ionicons name="arrow-back" size={28} color="#fff" />
@@ -141,7 +141,7 @@ function PrivacyAndSecurityScreen() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 80 }}
       >
-        {/* SECURITY SETTING */}
+        {}
         <View className="px-6 pt-6">
           <Text className="text-text-primary text-lg font-bold mb-4">Security</Text>
 
@@ -170,7 +170,6 @@ function PrivacyAndSecurityScreen() {
                     thumbColor="#FFFFFF"
                     trackColor={{ false: "#2A2A2A", true: "#1DB954" }}
 
-                    // ios_backgroundColor={"purple"}
                   />
                 ) : (
                   <Ionicons name="chevron-forward" size={20} color="#666" />
@@ -180,7 +179,7 @@ function PrivacyAndSecurityScreen() {
           ))}
         </View>
 
-        {/* Privacy Section */}
+        {}
         <View className="px-6 pt-4">
           <Text className="text-text-primary text-lg font-bold mb-4">Privacy</Text>
 
@@ -209,7 +208,7 @@ function PrivacyAndSecurityScreen() {
           ))}
         </View>
 
-        {/* ACCOUNT SECTION */}
+        {}
         <View className="px-6 pt-4">
           <Text className="text-text-primary text-lg font-bold mb-4">Account</Text>
 
@@ -235,7 +234,7 @@ function PrivacyAndSecurityScreen() {
           ))}
         </View>
 
-        {/* DELETE ACC BTN */}
+        {}
         <View className="px-6 pt-4">
           <TouchableOpacity
             className="bg-surface rounded-2xl p-5 flex-row items-center justify-between border-2 border-red-500/20"
@@ -254,7 +253,7 @@ function PrivacyAndSecurityScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* INFO ALERT */}
+        {}
         <View className="px-6 pt-6 pb-4">
           <View className="bg-primary/10 rounded-2xl p-4 flex-row">
             <Ionicons name="information-circle-outline" size={24} color="#1DB954" />

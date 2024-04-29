@@ -85,7 +85,7 @@ function AddressesScreen() {
     }
 
     if (editingAddressId) {
-      // update an existing address
+
       updateAddress(
         {
           addressId: editingAddressId,
@@ -103,7 +103,7 @@ function AddressesScreen() {
         }
       );
     } else {
-      // create new address
+
       addAddress(addressForm, {
         onSuccess: () => {
           setShowAddressForm(false);

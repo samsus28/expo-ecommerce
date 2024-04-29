@@ -19,13 +19,11 @@ function ProductsPage() {
 
   const queryClient = useQueryClient();
 
-  // fetch some data
   const { data: products = [] } = useQuery({
     queryKey: ["products"],
     queryFn: productApi.getAll,
   });
 
-  // creating, update, deleting
   const createProductMutation = useMutation({
     mutationFn: productApi.create,
     onSuccess: () => {
@@ -51,7 +49,7 @@ function ProductsPage() {
   });
 
   const closeModal = () => {
-    // reset the state
+
     setShowModal(false);
     setEditingProduct(null);
     setFormData({
@@ -82,7 +80,6 @@ function ProductsPage() {
     const files = Array.from(e.target.files);
     if (files.length > 3) return alert("Maximum 3 images allowed");
 
-    // revoke previous blob URLs to free memory
     imagePreviews.forEach((url) => {
       if (url.startsWith("blob:")) URL.revokeObjectURL(url);
     });
@@ -94,7 +91,6 @@ function ProductsPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // for new products, require images
     if (!editingProduct && imagePreviews.length === 0) {
       return alert("Please upload at least one image");
     }
@@ -106,7 +102,6 @@ function ProductsPage() {
     formDataToSend.append("stock", formData.stock);
     formDataToSend.append("category", formData.category);
 
-    // only append new images if they were selected
     if (images.length > 0) images.forEach((image) => formDataToSend.append("images", image));
 
     if (editingProduct) {
@@ -118,7 +113,7 @@ function ProductsPage() {
 
   return (
     <div className="space-y-6">
-      {/* HEADER */}
+      {}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">Products</h1>
@@ -130,7 +125,7 @@ function ProductsPage() {
         </button>
       </div>
 
-      {/* PRODUCTS GRID */}
+      {}
       <div className="grid grid-cols-1 gap-4">
         {products?.map((product) => {
           const status = getStockStatusBadge(product.stock);
@@ -190,7 +185,7 @@ function ProductsPage() {
         })}
       </div>
 
-      {/* ADD/EDIT PRODUCT MODAL */}
+      {}
 
       <input type="checkbox" className="modal-toggle" checked={showModal} />
 

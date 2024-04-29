@@ -41,7 +41,7 @@ function WishlistScreen() {
 
   return (
     <SafeScreen>
-      {/* HEADER */}
+      {}
       <View className="px-6 pb-5 border-b border-surface flex-row items-center">
         <TouchableOpacity onPress={() => router.back()} className="mr-4">
           <Ionicons name="arrow-back" size={28} color="#FFFFFF" />
@@ -81,7 +81,7 @@ function WishlistScreen() {
                 key={item._id}
                 className="bg-surface rounded-3xl overflow-hidden mb-3"
                 activeOpacity={0.8}
-                // onPress={() => router.push(`/product/${item._id}`)}
+
               >
                 <View className="flex-row p-4">
                   <Image

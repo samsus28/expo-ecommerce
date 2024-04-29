@@ -49,7 +49,7 @@ const ProductDetailScreen = () => {
 
   return (
     <SafeScreen>
-      {/* HEADER */}
+      {}
       <View className="absolute top-0 left-0 right-0 z-10 px-6 pt-20 pb-4 flex-row items-center justify-between">
         <TouchableOpacity
           className="bg-black/50 backdrop-blur-xl w-12 h-12 rounded-full items-center justify-center"
@@ -84,7 +84,7 @@ const ProductDetailScreen = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 100 }}
       >
-        {/* IMAGE GALLERY */}
+        {}
         <View className="relative">
           <ScrollView
             horizontal
@@ -102,7 +102,7 @@ const ProductDetailScreen = () => {
             ))}
           </ScrollView>
 
-          {/* Image Indicators */}
+          {}
           <View className="absolute bottom-4 left-0 right-0 flex-row justify-center gap-2">
             {product.images.map((_: any, index: number) => (
               <View
@@ -115,19 +115,19 @@ const ProductDetailScreen = () => {
           </View>
         </View>
 
-        {/* PRODUCT INFO */}
+        {}
         <View className="p-6">
-          {/* Category */}
+          {}
           <View className="flex-row items-center mb-3">
             <View className="bg-primary/20 px-3 py-1 rounded-full">
               <Text className="text-primary text-xs font-bold">{product.category}</Text>
             </View>
           </View>
 
-          {/* Product Name */}
+          {}
           <Text className="text-text-primary text-3xl font-bold mb-3">{product.name}</Text>
 
-          {/* Rating & Reviews */}
+          {}
           <View className="flex-row items-center mb-4">
             <View className="flex-row items-center bg-surface px-3 py-2 rounded-full">
               <Ionicons name="star" size={16} color="#FFC107" />
@@ -151,12 +151,12 @@ const ProductDetailScreen = () => {
             )}
           </View>
 
-          {/* Price */}
+          {}
           <View className="flex-row items-center mb-6">
             <Text className="text-primary text-4xl font-bold">${product.price.toFixed(2)}</Text>
           </View>
 
-          {/* Quantity */}
+          {}
           <View className="mb-6">
             <Text className="text-text-primary text-lg font-bold mb-3">Quantity</Text>
 
@@ -191,7 +191,7 @@ const ProductDetailScreen = () => {
             )}
           </View>
 
-          {/* Description */}
+          {}
           <View className="mb-8">
             <Text className="text-text-primary text-lg font-bold mb-3">Description</Text>
             <Text className="text-text-secondary text-base leading-6">{product.description}</Text>
@@ -199,7 +199,7 @@ const ProductDetailScreen = () => {
         </View>
       </ScrollView>
 
-      {/* Bottom Action Bar */}
+      {}
       <View className="absolute bottom-0 left-0 right-0 bg-background/95 backdrop-blur-xl border-t border-surface px-6 py-4 pb-8">
         <View className="flex-row items-center gap-3">
           <View className="flex-1">

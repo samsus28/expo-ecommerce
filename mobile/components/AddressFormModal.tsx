@@ -52,7 +52,7 @@ const AddressFormModal = ({
         className="flex-1"
       >
         <SafeScreen>
-          {/* HEADER */}
+          {}
           <View className="px-6 py-5 border-b border-surface flex-row items-center justify-between">
             <Text className="text-text-primary text-2xl font-bold">
               {isEditing ? "Edit Address" : "Add New Address"}
@@ -68,7 +68,7 @@ const AddressFormModal = ({
             showsVerticalScrollIndicator={false}
           >
             <View className="p-6">
-              {/* LABEL INPUT */}
+              {}
               <View className="mb-5">
                 <Text className="text-text-primary font-semibold mb-2">Label</Text>
                 <TextInput
@@ -80,7 +80,7 @@ const AddressFormModal = ({
                 />
               </View>
 
-              {/* NAME INPUT */}
+              {}
               <View className="mb-5">
                 <Text className="text-text-primary font-semibold mb-2">Full Name</Text>
                 <TextInput
@@ -92,7 +92,7 @@ const AddressFormModal = ({
                 />
               </View>
 
-              {/* Address Input */}
+              {}
               <View className="mb-5">
                 <Text className="text-text-primary font-semibold mb-2">Street Address</Text>
                 <TextInput
@@ -105,7 +105,7 @@ const AddressFormModal = ({
                 />
               </View>
 
-              {/* City Input */}
+              {}
               <View className="mb-5">
                 <Text className="text-text-primary font-semibold mb-2">City</Text>
                 <TextInput
@@ -117,7 +117,7 @@ const AddressFormModal = ({
                 />
               </View>
 
-              {/* State Input */}
+              {}
               <View className="mb-5">
                 <Text className="text-text-primary font-semibold mb-2">State</Text>
                 <TextInput
@@ -129,7 +129,7 @@ const AddressFormModal = ({
                 />
               </View>
 
-              {/* ZIP Code Input */}
+              {}
               <View className="mb-5">
                 <Text className="text-text-primary font-semibold mb-2">ZIP Code</Text>
                 <TextInput
@@ -142,7 +142,7 @@ const AddressFormModal = ({
                 />
               </View>
 
-              {/* Phone Input */}
+              {}
               <View className="mb-5">
                 <Text className="text-text-primary font-semibold mb-2">Phone Number</Text>
                 <TextInput
@@ -155,7 +155,7 @@ const AddressFormModal = ({
                 />
               </View>
 
-              {/* Default Address Toggle */}
+              {}
               <View className="bg-surface rounded-2xl p-4 flex-row items-center justify-between mb-6">
                 <Text className="text-text-primary font-semibold">Set as default address</Text>
                 <Switch
@@ -165,7 +165,7 @@ const AddressFormModal = ({
                 />
               </View>
 
-              {/* Save Button */}
+              {}
               <TouchableOpacity
                 className="bg-primary rounded-2xl py-5 items-center"
                 activeOpacity={0.8}

@@ -9,7 +9,7 @@ const TabsLayout = () => {
   const { isSignedIn, isLoaded } = useAuth();
   const insets = useSafeAreaInsets();
 
-  if (!isLoaded) return null; // for a better ux
+  if (!isLoaded) return null; 
   if (!isSignedIn) return <Redirect href={"/(auth)"} />;
 
   return (
@@ -33,8 +33,8 @@ const TabsLayout = () => {
             intensity={80}
             tint="dark"
             style={StyleSheet.absoluteFill}
-            // StyleSheet.absoluteFill is equal to this 👇
-            // { position: "absolute", top: 0, right: 0, left: 0, bottom: 0 }
+
+
           />
         ),
         tabBarLabelStyle: {

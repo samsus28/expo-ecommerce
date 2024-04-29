@@ -36,8 +36,8 @@ const CartScreen = () => {
 
   const cartItems = cart?.items || [];
   const subtotal = cartTotal;
-  const shipping = 10.0; // $10 shipping fee
-  const tax = subtotal * 0.08; // 8% tax
+  const shipping = 10.0; 
+  const tax = subtotal * 0.08; 
   const total = subtotal + shipping + tax;
 
   const handleQuantityChange = (productId: string, currentQuantity: number, change: number) => {
@@ -60,7 +60,6 @@ const CartScreen = () => {
   const handleCheckout = () => {
     if (cartItems.length === 0) return;
 
-    // check if user has addresses
     if (!addresses || addresses.length === 0) {
       Alert.alert(
         "No Address",
@@ -70,14 +69,12 @@ const CartScreen = () => {
       return;
     }
 
-    // show address selection modal
     setAddressModalVisible(true);
   };
 
   const handleProceedWithPayment = async (selectedAddress: Address) => {
     setAddressModalVisible(false);
 
-    // log chechkout initiated
     Sentry.logger.info("Checkout initiated", {
       itemCount: cartItemCount,
       total: total.toFixed(2),
@@ -87,7 +84,6 @@ const CartScreen = () => {
     try {
       setPaymentLoading(true);
 
-      // create payment intent with cart items and shipping address
       const { data } = await api.post("/payment/create-intent", {
         cartItems,
         shippingAddress: {
@@ -118,7 +114,6 @@ const CartScreen = () => {
         return;
       }
 
-      // present payment sheet
       const { error: presentError } = await presentPaymentSheet();
 
       if (presentError) {
@@ -171,7 +166,7 @@ const CartScreen = () => {
           {cartItems.map((item, index) => (
             <View key={item._id} className="bg-surface rounded-3xl overflow-hidden ">
               <View className="p-4 flex-row">
-                {/* product image */}
+                {}
                 <View className="relative">
                   <Image
                     source={item.product.images[0]}
@@ -255,7 +250,7 @@ const CartScreen = () => {
         className="absolute bottom-0 left-0 right-0 bg-background/95 backdrop-blur-xl border-t
        border-surface pt-4 pb-32 px-6"
       >
-        {/* Quick Stats */}
+        {}
         <View className="flex-row items-center justify-between mb-4">
           <View className="flex-row items-center">
             <Ionicons name="cart" size={20} color="#1DB954" />
@@ -268,7 +263,7 @@ const CartScreen = () => {
           </View>
         </View>
 
-        {/* Checkout Button */}
+        {}
         <TouchableOpacity
           className="bg-primary rounded-2xl overflow-hidden"
           activeOpacity={0.9}

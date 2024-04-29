@@ -24,7 +24,7 @@ const AddressSelectionModal = ({
     <Modal visible={visible} animationType="slide" transparent={true} onRequestClose={onClose}>
       <View className="flex-1 bg-black/50 justify-end">
         <View className="bg-background rounded-t-3xl h-1/2">
-          {/* Modal Header */}
+          {}
           <View className="flex-row items-center justify-between p-6 border-b border-surface">
             <Text className="text-text-primary text-2xl font-bold">Select Address</Text>
             <TouchableOpacity onPress={onClose} className="bg-surface rounded-full p-2">
@@ -32,7 +32,7 @@ const AddressSelectionModal = ({
             </TouchableOpacity>
           </View>
 
-          {/* ADDRESSES LIST */}
+          {}
           <ScrollView className="flex-1 p-6">
             {addressesLoading ? (
               <View className="py-8">

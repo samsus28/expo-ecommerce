@@ -25,12 +25,10 @@ const ShopScreen = () => {
 
     let filtered = products;
 
-    // filtering by category
     if (selectedCategory !== "All") {
       filtered = filtered.filter((product) => product.category === selectedCategory);
     }
 
-    // filtering by searh query
     if (searchQuery.trim()) {
       filtered = filtered.filter((product) =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -47,7 +45,7 @@ const ShopScreen = () => {
         contentContainerStyle={{ paddingBottom: 100 }}
         showsVerticalScrollIndicator={false}
       >
-        {/* HEADER */}
+        {}
         <View className="px-6 pb-4 pt-6">
           <View className="flex-row items-center justify-between mb-6">
             <View>
@@ -60,7 +58,7 @@ const ShopScreen = () => {
             </TouchableOpacity>
           </View>
 
-          {/* SEARCH BAR */}
+          {}
           <View className="bg-surface flex-row items-center px-5 py-4 rounded-2xl">
             <Ionicons color={"#666"} size={22} name="search" />
             <TextInput
@@ -73,7 +71,7 @@ const ShopScreen = () => {
           </View>
         </View>
 
-        {/* CATEGORY FILTER */}
+        {}
         <View className="mb-6">
           <ScrollView
             horizontal
@@ -109,7 +107,7 @@ const ShopScreen = () => {
             <Text className="text-text-secondary text-sm">{filteredProducts.length} items</Text>
           </View>
 
-          {/* PRODUCTS GRID */}
+          {}
           <ProductsGrid products={filteredProducts} isLoading={isLoading} isError={isError} />
         </View>
       </ScrollView>

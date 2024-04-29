@@ -14,8 +14,7 @@ function DashboardPage() {
     queryFn: statsApi.getDashboard,
   });
 
-  // it would be better to send the last 5 items from the api, instead of slicing it here
-  // but we're just keeping it simple here...
+
   const recentOrders = ordersData?.orders?.slice(0, 5) || [];
 
   const statsCards = [
@@ -43,7 +42,7 @@ function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      {/* STATS */}
+      {}
       <div className="stats stats-vertical lg:stats-horizontal shadow w-full bg-base-100">
         {statsCards.map((stat) => (
           <div key={stat.name} className="stat">
@@ -54,7 +53,7 @@ function DashboardPage() {
         ))}
       </div>
 
-      {/* RECENT ORDERS */}
+      {}
       <div className="card bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">Recent Orders</h2>
